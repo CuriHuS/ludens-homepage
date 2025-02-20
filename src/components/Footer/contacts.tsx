@@ -4,7 +4,6 @@ import Image from 'next/image';
 import mailLogo from '../../assets/icons/mail.svg';
 import instagramLogo from '../../assets/icons/instagram.svg';
 import youtubeLogo from '../../assets/icons/youtube.svg';
-import githubLogo from '../../assets/icons/github.svg';
 
 function Contacts() {
   const handleClick = (e: React.MouseEvent) => {
