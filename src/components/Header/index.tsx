@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-[30px]">
-            <nav className="max-w-6xl mx-auto px-8 py-4">
+            <nav className="max-w-7xl mx-auto px-8 py-4">
                 <div className="flex items-center justify-between">
                     <Link
                         href="/"
