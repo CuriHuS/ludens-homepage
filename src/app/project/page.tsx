@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { AnimatePresence, m } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { YearTab } from '@/components/common/YearTab';
 import { AwardCard } from '@/components/common/AwardCard';
 import { usePrevNextButtons, PrevButton, NextButton } from '@/components/common/CarouselArrowButton';
@@ -91,7 +91,7 @@ export default function Projects() {
 
             <p className="text-3xl text-white font-semibold text-center mt-48 mb-12">진행한 프로젝트</p>
             <AnimatePresence mode="wait" initial={false}>
-                <m.div
+                <motion.div
                     className="w-full mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
                     initial="initial"
                     animate="animate"
@@ -109,7 +109,7 @@ export default function Projects() {
                                 links={project.links as Link[]}
                             />
                         ))}
-                </m.div>
+                </motion.div>
             </AnimatePresence>
             {visibleProjects < PROJECT_LIST.length && (
                 <button
