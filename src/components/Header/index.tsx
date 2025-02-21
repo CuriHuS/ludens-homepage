@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ApplyButton from "@/components/common/ApplyButton";
 import { menuItemList } from "./menuItemList";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,23 +62,45 @@ export default function Header() {
                 </div>
 
                 {/* Mobile navigation */}
-                {isMenuOpen && (
-                    <div className="md:hidden mt-4 pb-4">
-                        <div className="flex flex-col gap-4">
-                            {menuItemList.map((item) => (
-                                <Link
-                                    key={item.label}
-                                    href={item.href}
-                                    className="text-base font-bold text-gray-300 hover:text-white transition-colors"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
-                            <ApplyButton />
-                        </div>
-                    </div>
-                )}
+                <AnimatePresence>
+                    {isMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                        >
+                            <div className="md:hidden mt-4 pb-4">
+                                <div className="flex flex-col gap-4">
+                                    {menuItemList.map((item, itemIndex) => (
+                                        <motion.div
+                                            key={item.label}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.1 * itemIndex }}
+                                        >
+                                            <Link
+                                                key={item.label}
+                                                href={item.href}
+                                                className="text-lg font-bold text-gray-300 hover:text-white transition-colors"
+                                                onClick={() => setIsMenuOpen(false)}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        </motion.div>
+                                    ))}
+                                    <motion.div
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        className="inline-flex"
+                                    >
+                                        <ApplyButton />
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </nav>
         </header>
     );
