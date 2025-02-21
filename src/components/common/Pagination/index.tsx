@@ -47,14 +47,14 @@ export function Pagination({ handlePageClick, numberOfPages, currentPage }: Pagi
       className={`w-full mx-5 flex items-center overflow-x-scroll scrollbar-hide ${isCentered ? 'justify-center' : ''}`}
       ref={containerRef}
     >
-      <ul className="mt-9 flex text-base font-normal leading-[150%] hover:cursor-pointer">
+      <ul className="mt-8 flex text-base font-normal leading-[150%] hover:cursor-pointer">
         {[...new Array(numberOfPages)].map((_, i) => {
           const isSelected = currentPage === i + 1;
           return (
             <li
               onClick={() => handlePageClick(i + 1)}
               className={`w-14 h-14 flex items-center justify-center ${
-                isSelected ? 'text-gray-300' : 'text-gray-300'
+                isSelected ? 'text-white font-bold' : 'text-white/60 font-medium'
               }`}
               key={`page-${id}-${i + 1}`}
               data-page={i + 1}
