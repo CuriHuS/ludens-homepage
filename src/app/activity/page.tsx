@@ -4,39 +4,30 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 
 import { Pagination } from '@/components/common/Pagination';
-import { YearTab } from '@/components/common/YearTab';
-import { Thumbnail } from '@/components/common/Thumbnail';
-import { Link } from '@/components/common/Thumbnail/';
+import { GridTab } from '@/components/common/GridTab';
+import { ActivityCard } from '@/components/common/ActivityCard';
 import { staggerHalf } from '@/constants/motion';
-import { PROJECT_LIST } from '@/constants/dummyProject';
+import { ACTIVITY_LIST, YEAR_LIST } from '@/constants/activity';
 import {
-    getCurrentProjects,
-    getTenUnderProjects,
-    sliceByPage,
+    getCurrentActivities,
 } from '@/utils/pagination';
 
 const FIRST_PAGE = 1;
 const ALL_TAB = '전체';
-const TEN_UNDER_TAB = '~10기';
 const ITEMS_PER_PAGE = 9;
 
 export default function Activity() {
     const [currentTab, setCurrentTab] = useState(ALL_TAB);
-    const [selectedProjectList, setSelectedProjectList] = useState(PROJECT_LIST);
+    const [selectedActivityList, setSelectedActivityList] = useState(ACTIVITY_LIST);
     const [currentPage, setCurrentPage] = useState(FIRST_PAGE);
 
     useEffect(() => {
         setCurrentPage(1);
         if (currentTab === ALL_TAB) {
-            return setSelectedProjectList(PROJECT_LIST);
+            return setSelectedActivityList(ACTIVITY_LIST);
         }
-
-        if (currentTab === TEN_UNDER_TAB) {
-            return setSelectedProjectList(getTenUnderProjects(PROJECT_LIST));
-        }
-
-        const selectedProjects = getCurrentProjects(PROJECT_LIST, currentTab);
-        setSelectedProjectList(selectedProjects);
+        const selectedActivities = getCurrentActivities(ACTIVITY_LIST, currentTab);
+        setSelectedActivityList(selectedActivities);
     }, [currentTab]);
 
     const onClickPage = (page: number) => {
@@ -44,32 +35,36 @@ export default function Activity() {
     };
 
     return (
-        <section className="w-full flex flex-col mt-40 items-center">
+        <section className="w-full flex flex-col mt-32 items-center">
+            <p className="text-6xl text-white font-bold text-center mb-36">활동 기록</p>
+            <div className="flex items-center justify-center">
+                <GridTab currentTab={currentTab} setCurrentTab={setCurrentTab} tabList={YEAR_LIST} />
+            </div>
             <AnimatePresence mode="wait" initial={false}>
                 <m.div
-                    className="w-full mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+                    className="w-full mx-auto mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
                     initial="initial"
                     animate="animate"
                     exit="exit"
                     variants={staggerHalf}
                 >
-                    {selectedProjectList
+                    {selectedActivityList
                         .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
-                        .map(project => (
-                            <Thumbnail
-                                key={project.title}
-                                img={`/images/project/${project.subTitle}/${project.title}.png`}
-                                title={project.title}
-                                subTitle={project.subTitle}
-                                description={project.description}
-                                links={project.links as Link[]}
+                        .map(activity => (
+                            <ActivityCard
+                                key={activity.title}
+                                img={`/images/activity/${activity.year}/${encodeURIComponent(activity.title)}/thumbnail.webp`}
+                                title={activity.title}
+                                type={activity.type}
+                                year={activity.year}
+                                date={activity.date}
                             />
                         )
                         )}
                 </m.div>
             </AnimatePresence>
             <Pagination
-                numberOfPages={Math.ceil(selectedProjectList.length / ITEMS_PER_PAGE)}
+                numberOfPages={Math.ceil(selectedActivityList.length / ITEMS_PER_PAGE)}
                 currentPage={currentPage}
                 handlePageClick={onClickPage}
             />
