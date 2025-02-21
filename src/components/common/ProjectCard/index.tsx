@@ -50,11 +50,11 @@ export function ProjectCard({ title, subTitle, img, links }: ProjectCardProps) {
             <div className="absolute bottom-0 w-full h-[172px]" />
             <div className="absolute inset-0 flex flex-col gap-2 p-6 opacity-0 group-hover:opacity-100 hover:backdrop-blur-sm transition-opacity duration-300">
                 <p
-                    className="mt-0.5 text-2xl font-semibold leading-[150%] text-white"
+                    className="mt-0.5 text-2xl font-bold leading-[150%] text-white"
                     dangerouslySetInnerHTML={{ __html: title as string }}
                 />
                 <p
-                    className="text-[15px] font-medium leading-[150%] text-white whitespace-pre-wrap"
+                    className="text-base font-semibold leading-[150%] text-white whitespace-pre-wrap"
                     dangerouslySetInnerHTML={{ __html: subTitle as string }}
                 />
                 {links && (
