@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import ApplyButton from "@/components/common/ApplyButton";
 import { menuItemList } from "./menuItemList";
 
 export default function Header() {
@@ -48,19 +49,12 @@ export default function Header() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className="text-lg font-extrabold text-gray-300 hover:text-white transition-colors"
+                                    className="text-lg font-bold text-gray-300 hover:text-white transition-colors"
                                 >
                                     {item.label}
                                 </Link>
                             ))}
-                            <a
-                                href="https://forms.gle/bUJqCGZ1914Yy35p6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-4 py-1 text-lg font-extrabold text-white border border-white rounded-[5.869px] bg-white/20 hover:bg-white/30 transition-colors"
-                            >
-                                지원하기
-                            </a>
+                            <ApplyButton />
 
                         </div>
                     </div>
@@ -80,13 +74,7 @@ export default function Header() {
                                     {item.label}
                                 </Link>
                             ))}
-                            <Link
-                                href="/apply"
-                                className="px-4 py-1 text-base font-bold text-white border border-white rounded-[5.869px] bg-white/20 hover:bg-white/30 transition-colors w-fit"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                지원하기
-                            </Link>
+                            <ApplyButton />
                         </div>
                     </div>
                 )}
