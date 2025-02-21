@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { YearTab } from '@/components/common/YearTab';
+import { GridTab } from '@/components/common/GridTab';
 import { AwardCard } from '@/components/common/AwardCard';
 import { usePrevNextButtons, PrevButton, NextButton } from '@/components/common/CarouselArrowButton';
 import { YEAR_LIST, AWARD_LIST } from '@/constants/award';
@@ -59,7 +59,7 @@ export default function Projects() {
 
             <div className="w-full">
                 <div className="flex items-center justify-center">
-                    <YearTab currentTab={currentYearTab} setCurrentTab={setCurrentYearTab} tabList={YEAR_LIST} />
+                    <GridTab currentTab={currentYearTab} setCurrentTab={setCurrentYearTab} tabList={YEAR_LIST} />
                 </div>
 
                 <div className="relative w-full mt-8">
@@ -114,7 +114,7 @@ export default function Projects() {
             {visibleProjects < PROJECT_LIST.length && (
                 <button
                     onClick={handleShowMore}
-                    className="mt-12 py-2.5 px-6 text-base font-bold rounded-full bg-gray-200 text-black"
+                    className="mt-12 py-2.5 px-6 text-base font-bold rounded-full bg-white text-black"
                 >
                     더보기
                 </button>
