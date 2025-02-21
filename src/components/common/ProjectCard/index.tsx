@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import youtubeLogo from '../../../assets/icons/youtube.svg';
 import githubLogo from '../../../assets/icons/github.svg';
 import steamLogo from '../../../assets/icons/steam.svg';
+import { defaultFadeIn } from '@/constants/motion';
 
 export type Link = {
     type: 'youtube' | 'github' | 'steam';
@@ -16,12 +17,6 @@ type ProjectCardProps = {
     subTitle?: string;
     img: string;
     links?: Link[];
-};
-
-const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
 };
 
 const logoMap = {
@@ -36,7 +31,7 @@ export function ProjectCard({ title, subTitle, img, links }: ProjectCardProps) {
             className="relative h-[220px] w-full overflow-hidden rounded-xl hover:cursor-pointer group"
             initial="initial"
             animate="animate"
-            variants={fadeIn}
+            variants={defaultFadeIn}
         >
             <Image
                 className="object-cover object-center rounded-xl transition-all duration-300 group-hover:brightness-[0.3]"
@@ -47,16 +42,9 @@ export function ProjectCard({ title, subTitle, img, links }: ProjectCardProps) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
             />
-            <div className="absolute bottom-0 w-full h-[172px]" />
             <div className="absolute inset-0 flex flex-col gap-2 p-6 opacity-0 group-hover:opacity-100 hover:backdrop-blur-sm transition-opacity duration-300">
-                <p
-                    className="mt-0.5 text-2xl font-bold leading-[150%] text-white"
-                    dangerouslySetInnerHTML={{ __html: title as string }}
-                />
-                <p
-                    className="text-base font-semibold leading-[150%] text-white whitespace-pre-wrap"
-                    dangerouslySetInnerHTML={{ __html: subTitle as string }}
-                />
+                <p className="mt-0.5 text-2xl font-bold leading-[150%] text-white">{title}</p>
+                <p className="text-base font-semibold leading-[150%] text-white whitespace-pre-wrap">{subTitle}</p>
                 {links && (
                     <div className="mt-auto flex items-center gap-1">
                         {links.map(link => (
