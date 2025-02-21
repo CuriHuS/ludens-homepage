@@ -11,9 +11,19 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'kyunghee-red': '#A40F16',
-        'kyunghee-red-20': '#F7A8AC',
-        'kyunghee-red-50': '#F1676E',
+        "kyunghee-red": {
+          50: "#FCE3E4",
+          100: "#FBD0D2",
+          200: "#F8B4B8",
+          300: "#F59498",
+          400: "#F3787E",
+          500: "#F0575E",
+          600: "#ED3B44",
+          700: "#EA1A24",
+          800: "#D2131D",
+          900: "#B21018",
+          950: "#A40F16"
+        }
       },
       backgroundSize: {
         'size-200': '200% 200%',
