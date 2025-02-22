@@ -25,5 +25,5 @@ import { Award } from '@/constants/award';
 //   return awards.slice(PC_CAROUSEL_SIZE * initialPage, PC_CAROUSEL_SIZE * page);
 // };
 
-export const getCurrentAwards = (awards: Award[], currentYear: string) =>
-  awards.filter(award => award.year === String(currentYear));
+export const getCurrentAwards = (awards: Award[], currentTab: string) =>
+  awards.filter(award => award.year === String(currentTab));

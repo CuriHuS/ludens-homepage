@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction } from 'react';
 
-type GridTabProps = {
+type FilterYearTabProps = {
   currentTab: string;
   setCurrentTab: Dispatch<SetStateAction<string>>;
   tabList: string[];
 };
 
-export function GridTab({ currentTab, setCurrentTab, tabList }: GridTabProps) {
+export function FilterYearTab({ currentTab, setCurrentTab, tabList }: FilterYearTabProps) {
   return (
     <ul className="flex w-full sm:w-auto overflow-x-auto sm:overflow-visible scrollbar-hide">
       <li className="flex gap-1 w-full justify-center">

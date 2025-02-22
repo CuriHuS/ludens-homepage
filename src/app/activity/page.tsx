@@ -4,13 +4,11 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 
 import { Pagination } from '@/components/common/Pagination';
-import { GridTab } from '@/components/common/GridTab';
+import { FilterYearTab } from '@/components/common/FilterYearTab';
 import { ActivityCard } from '@/components/common/ActivityCard';
 import { staggerHalf } from '@/constants/motion';
 import { ACTIVITY_LIST, YEAR_LIST } from '@/constants/activity';
-import {
-    getCurrentActivities,
-} from '@/utils/pagination';
+import { getCurrentActivities } from '@/utils/pagination';
 
 const FIRST_PAGE = 1;
 const ALL_TAB = '전체';
@@ -38,7 +36,7 @@ export default function Activity() {
         <section className="w-full flex flex-col mt-32 items-center">
             <p className="text-6xl text-white font-bold text-center mb-36">활동 기록</p>
             <div className="flex items-center justify-center">
-                <GridTab currentTab={currentTab} setCurrentTab={setCurrentTab} tabList={YEAR_LIST} />
+                <FilterYearTab currentTab={currentTab} setCurrentTab={setCurrentTab} tabList={YEAR_LIST} />
             </div>
             <AnimatePresence mode="wait" initial={false}>
                 <m.div

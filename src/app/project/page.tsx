@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { GridTab } from '@/components/common/GridTab';
+import { FilterYearTab } from '@/components/common/FilterYearTab';
 import { AwardCard } from '@/components/common/AwardCard';
 import { usePrevNextButtons, PrevButton, NextButton } from '@/components/common/CarouselArrowButton';
 import { YEAR_LIST, AWARD_LIST } from '@/constants/award';
@@ -13,8 +13,8 @@ import { staggerHalf } from '@/constants/motion';
 import { PROJECT_LIST } from '@/constants/project';
 import { getCurrentAwards } from '@/utils/carousel';
 
-const PROJECTS_INITIALLY_SHOWN = 6;
-const ALL_YEARS = '전체';
+const INITIAL_VISIBLE_PROJECTS = 6;
+const ALL_TAB = '전체';
 
 export default function Projects() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -23,8 +23,8 @@ export default function Projects() {
         containScroll: 'trimSnaps',
     });
     const [selectedAwardsList, setSelectedAwardsList] = useState(AWARD_LIST);
-    const [currentYearTab, setCurrentYearTab] = useState(ALL_YEARS);
-    const [visibleProjects, setVisibleProjects] = useState(PROJECTS_INITIALLY_SHOWN);
+    const [currentTab, setCurrentTab] = useState(ALL_TAB);
+    const [visibleProjects, setVisibleProjects] = useState(INITIAL_VISIBLE_PROJECTS);
 
     // not used after using embla carousel
 
@@ -38,16 +38,16 @@ export default function Projects() {
     // }, [isSmallScreen, isMediumScreen]);
 
     useEffect(() => {
-        if (currentYearTab === ALL_YEARS) {
+        if (currentTab === ALL_TAB) {
             setSelectedAwardsList(AWARD_LIST);
         } else {
-            const selectedAwards = getCurrentAwards(AWARD_LIST, currentYearTab);
+            const selectedAwards = getCurrentAwards(AWARD_LIST, currentTab);
             setSelectedAwardsList(selectedAwards);
         }
-    }, [currentYearTab]);
+    }, [currentTab]);
 
-    const handleShowMore = () => {
-        setVisibleProjects(prev => prev + PROJECTS_INITIALLY_SHOWN);
+    const onClickShowMore = () => {
+        setVisibleProjects(prev => prev + INITIAL_VISIBLE_PROJECTS);
     };
 
     const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
@@ -59,7 +59,7 @@ export default function Projects() {
 
             <div className="w-full">
                 <div className="flex items-center justify-center">
-                    <GridTab currentTab={currentYearTab} setCurrentTab={setCurrentYearTab} tabList={YEAR_LIST} />
+                    <FilterYearTab currentTab={currentTab} setCurrentTab={setCurrentTab} tabList={YEAR_LIST} />
                 </div>
 
                 <div className="relative w-full mt-8">
@@ -113,7 +113,7 @@ export default function Projects() {
             </AnimatePresence>
             {visibleProjects < PROJECT_LIST.length && (
                 <button
-                    onClick={handleShowMore}
+                    onClick={onClickShowMore}
                     className="mt-12 py-2.5 px-6 text-base font-bold rounded-full bg-white text-black"
                 >
                     더보기
