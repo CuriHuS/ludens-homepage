@@ -5,6 +5,8 @@ import Link from "next/link";
 import ApplyButton from "@/components/common/ApplyButton";
 import { menuItemList } from "./menuItemList";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import ludensLogo from "@/assets/icons/ludens.svg";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +19,13 @@ export default function Header() {
                         href="/"
                         className="text-3xl font-bold text-white hover:text-gray-200 transition-colors"
                     >
-                        Ludens
+                        <Image 
+                            src={ludensLogo} 
+                            alt="logo" 
+                            width={80} 
+                            height={80} 
+                            className="brightness-0 invert"
+                        />
                     </Link>
 
                     {/* Mobile menu button */}
