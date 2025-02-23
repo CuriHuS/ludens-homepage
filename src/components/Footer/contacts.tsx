@@ -4,18 +4,19 @@ import Image from 'next/image';
 import mailLogo from '../../assets/icons/mail.svg';
 import instagramLogo from '../../assets/icons/instagram.svg';
 import youtubeLogo from '../../assets/icons/youtube.svg';
+import { LUDENS_EMAIL, LUDENS_INSTAGRAM, LUDENS_YOUTUBE } from '@/constants/ludens';
 
 function Contacts() {
   const handleClick = (e: React.MouseEvent) => {
     switch (e.currentTarget.id) {
       case 'mail':
-        window.open('mailto:khuludens@gmail.com');
+        window.open(`mailto:${LUDENS_EMAIL}`);
         break;
       case 'youtube':
-        window.open('https://www.youtube.com/channel/UCtqRouwACBVB9wtfVSfZA2g');
+        window.open(LUDENS_YOUTUBE);
         break;
       default:
-        window.open('https://www.instagram.com/khu_ludens/');
+        window.open(LUDENS_INSTAGRAM);
         break;
     }
   };
