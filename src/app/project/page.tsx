@@ -103,7 +103,7 @@ export default function Projects() {
                         .map(project => (
                             <ProjectCard
                                 key={project.title}
-                                img={`/images/project/${encodeURIComponent(project.title)}/thumbnail.${project.thumbnailFormat || 'webp'}`}
+                                img={`/images/project/${project.id}/thumbnail.${project.thumbnailFormat || 'webp'}`}
                                 title={project.title}
                                 subTitle={project.subTitle}
                                 links={project.links as Link[]}
