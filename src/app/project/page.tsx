@@ -114,7 +114,7 @@ export default function Projects() {
             {visibleProjects < PROJECT_LIST.length && (
                 <button
                     onClick={onClickShowMore}
-                    className="mt-12 py-2.5 px-6 text-base font-bold rounded-full bg-white text-black"
+                    className="mt-12 py-2.5 px-6 text-base font-semibold rounded-full bg-white text-black"
                 >
                     더보기
                 </button>
