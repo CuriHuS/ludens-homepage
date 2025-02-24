@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import youtubeLogo from '../../../assets/icons/youtube.svg';
-import githubLogo from '../../../assets/icons/github.svg';
-import steamLogo from '../../../assets/icons/steam.svg';
+import youtubeLogo from '@/assets/icons/youtube.svg';
+import githubLogo from '@/assets/icons/github.svg';
+import steamLogo from '@/assets/icons/steam.svg';
 import { defaultFadeIn } from '@/constants/motion';
 
 export type Link = {

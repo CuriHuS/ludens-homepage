@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FilterYearTab } from '@/components/common/FilterYearTab';
-import { AwardCard } from '@/components/common/AwardCard';
+import { AwardCard } from '@/features/Award/components/awardCard';
 import { usePrevNextButtons, PrevButton, NextButton } from '@/components/common/CarouselArrowButton';
 import { YEAR_LIST, AWARD_LIST } from '@/constants/award';
 
-import { ProjectCard, Link } from '@/components/common/ProjectCard';
+import { ProjectCard, Link } from '@/features/Project/components/projectCard';
 import { staggerHalf } from '@/constants/motion';
 import { PROJECT_LIST } from '@/constants/project';
-import { getCurrentAwards } from '@/utils/carousel';
+import { getCurrentAwards } from '@/features/Award/utils/carousel';
 
 const INITIAL_VISIBLE_PROJECTS = 6;
 const ALL_TAB = '전체';

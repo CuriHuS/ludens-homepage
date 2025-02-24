@@ -1,4 +1,4 @@
-import { Link } from '@/components/common/ProjectCard';
+import { Link } from '@/features/Project/components/projectCard';
 
 export type Project = {
     id: string;

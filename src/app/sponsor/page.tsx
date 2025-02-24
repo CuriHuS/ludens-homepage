@@ -2,7 +2,7 @@
 
 import { LUDENS_EMAIL } from '@/constants/ludens';
 import { SPONSOR_LIST } from '@/constants/sponsor';
-import SponsorCard from '@/components/common/SponsorCard';
+import SponsorCard from '@/features/Sponsor/components/sponsorCard';
 
 export default function Sponsor() {
     return (

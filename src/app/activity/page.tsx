@@ -5,10 +5,10 @@ import { AnimatePresence, m } from 'framer-motion';
 
 import { Pagination } from '@/components/common/Pagination';
 import { FilterYearTab } from '@/components/common/FilterYearTab';
-import { ActivityCard } from '@/components/common/ActivityCard';
+import { ActivityCard } from '@/features/Activity/components/activityCard';
 import { staggerHalf } from '@/constants/motion';
 import { ACTIVITY_LIST, YEAR_LIST } from '@/constants/activity';
-import { getCurrentActivities } from '@/utils/pagination';
+import { getCurrentActivities } from '@/features/Activity/utils/pagination';
 
 const FIRST_PAGE = 1;
 const ALL_TAB = '전체';
