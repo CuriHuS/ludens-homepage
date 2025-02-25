@@ -1,4 +1,3 @@
-// awardCard.tsx
 import { Award } from '@/constants/award';
 
 type AwardCardProps = {
@@ -11,23 +10,20 @@ function getPlaceText(place: string): string {
     return '🏆 ' + place;
   }
   if (place.includes('최우수상')) {
-    return '🏅 ' + place;
+    return '🏅' + place;
   }
   if (place.includes('우수상')) {
-    return '🥈 ' + place;
+    return '🥈' + place;
   }
-  // 기타 상은 그대로
   return place;
 }
 
 export function AwardCard({ award }: AwardCardProps) {
-  // 이곳에서 이모티콘 처리된 place를 만든다
   const placeText = getPlaceText(award.place);
 
   return (
     <div className="w-full flex flex-col bg-neutral-800 rounded-xl p-8">
       <div className="flex justify-between mb-6">
-        {/* placeText를 사용 */}
         <span className="text-xl md:text-2xl text-white font-bold truncate">
           {placeText}
         </span>
