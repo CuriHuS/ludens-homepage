@@ -1,3 +1,4 @@
+// pagination.ts
 import { Activity } from '@/constants/activity';
 
 export const MOBILE_PAGE_SIZE = 6;
@@ -19,9 +20,21 @@ export const sliceByPage = (
   if (isTabletSize) {
     return activities.slice(TABLET_PAGE_SIZE * initialPage, TABLET_PAGE_SIZE * page);
   }
-
   return activities.slice(PC_PAGE_SIZE * initialPage, PC_PAGE_SIZE * page);
 };
 
-export const getCurrentActivities = (activities: Activity[], currentTab: string) =>
-  activities.filter(activity => activity.year === currentTab)
+// year가 string | string[]이므로 아래와 같이 수정
+export const getCurrentActivities = (activities: Activity[], currentTab: string) => {
+  if (currentTab === '전체') return activities;
+
+  return activities.filter((activity) => {
+    const { year } = activity;
+    if (Array.isArray(year)) {
+      // year가 배열이면 해당 탭이 포함되어 있는지 확인
+      return year.includes(currentTab);
+    } else {
+      // 단일 문자열이면 기존 로직
+      return year === currentTab;
+    }
+  });
+};
