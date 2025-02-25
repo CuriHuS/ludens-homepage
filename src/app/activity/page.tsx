@@ -1,8 +1,7 @@
-// page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence, m } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Pagination } from '@/components/common/Pagination';
 import { FilterYearTab } from '@/components/common/FilterYearTab';
@@ -42,7 +41,7 @@ export default function Activity() {
         <FilterYearTab currentTab={currentTab} setCurrentTab={setCurrentTab} tabList={YEAR_LIST} />
       </div>
       <AnimatePresence mode="wait" initial={false}>
-        <m.div
+        <motion.div
           className="w-full mx-auto mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           initial="initial"
           animate="animate"
@@ -69,7 +68,7 @@ export default function Activity() {
                 />
               );
             })}
-        </m.div>
+        </motion.div>
       </AnimatePresence>
       <Pagination
         numberOfPages={Math.ceil(selectedActivityList.length / ITEMS_PER_PAGE)}
