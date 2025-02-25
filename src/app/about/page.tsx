@@ -3,11 +3,11 @@ import BannerSection from '@/features/About/sections/bannerSection';
 const MEMBERS_DATA = [
   {
     title: "김정원",
-    description: "안녕하세요~! 김정원입니다 23학번 21살입니다. 잘부탁드려요~~!",
+    description: "안녕하세요~! 김정원입니다 20학번 26살입니다. 잘부탁드려요~~!",
   },
   {
-    title: "김정투",
-    description: "안녕하세요~! 김정원입니다 23학번 21살입니다. 잘부탁드려요~~!",
+    title: "최현승",
+    description: "안녕하세요~! 최현승입니다 20학번 만 24살입니다. 잘부탁드려요~~!",
   },
   {
     title: "김정삼",

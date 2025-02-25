@@ -4,7 +4,8 @@ import Image from 'next/image';
 import mailLogo from '../../assets/icons/mail.svg';
 import instagramLogo from '../../assets/icons/instagram.svg';
 import youtubeLogo from '../../assets/icons/youtube.svg';
-import { LUDENS_EMAIL, LUDENS_INSTAGRAM, LUDENS_YOUTUBE } from '@/constants/ludens';
+import notionLogo from '../../assets/icons/notion.svg';
+import { LUDENS_EMAIL, LUDENS_INSTAGRAM, LUDENS_YOUTUBE, LUDENS_NOTION } from '@/constants/ludens';
 
 function Contacts() {
   const handleClick = (e: React.MouseEvent) => {
@@ -14,6 +15,9 @@ function Contacts() {
         break;
       case 'youtube':
         window.open(LUDENS_YOUTUBE);
+        break;
+      case 'notion':
+        window.open(LUDENS_NOTION);
         break;
       default:
         window.open(LUDENS_INSTAGRAM);
@@ -45,6 +49,14 @@ function Contacts() {
         height={30}
         id="youtube"
         alt="유튜브"
+        onClick={handleClick}
+      />
+      <Image className="cursor-pointer"
+        src={notionLogo}
+        width={30}
+        height={30}
+        id="notion"
+        alt="노션"
         onClick={handleClick}
       />
     </div>
