@@ -11,10 +11,28 @@ export type Project = {
 
 export const PROJECT_LIST: Project[] = [
     {
+        id: 'wizard',
+        title: 'Wi, Zard!',
+        subTitle: '2인용 멀티 3D 협동 소울라이크 게임',
+        description: '긴 설명',
+        links: [
+            {
+                type: 'youtube',
+                href: 'https://www.youtube.com/watch?v=BJxZDun471U',
+            },
+        ]
+    },
+    {
         id: 'udt',
         title: 'Urban Design Tool (UDT)',
         subTitle: '환경 친화적인 도시를 설계할 수 있는 능력을 키우는 학습 도구',
         description: '긴 설명',
+        links: [
+            {
+                type: 'github',
+                href: 'https://github.com/TeamRGD/Project-UDT',
+            }
+        ]
     },
     {
         id: 'kingmini',
@@ -47,6 +65,12 @@ export const PROJECT_LIST: Project[] = [
         title: '쇼츠만 본지 30년하고 8개월, 내가 던전을 깰 수 있을 리 없잖아 무리무리! (※ 무리가 아니었다?!)',
         subTitle: '2D 장애물 피하기 게임',
         description: '긴 설명',
+        links: [
+            {
+                type: 'youtube',
+                href: 'https://youtu.be/TnGSAI4c7uI',
+            }
+        ]
     },
     {
         id: 'sun-mouse',
