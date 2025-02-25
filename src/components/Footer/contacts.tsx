@@ -29,16 +29,16 @@ function Contacts() {
     <div className="flex gap-2">
       <Image className="cursor-pointer"
         src={mailLogo}
-        width={30}
-        height={30}
+        width={32}
+        height={32}
         id="mail"
         alt="메일"
         onClick={handleClick}
       />
       <Image className="cursor-pointer"
         src={instagramLogo}
-        width={30}
-        height={30}
+        width={28}
+        height={28}
         id="instagram"
         alt="인스타그램"
         onClick={handleClick}
@@ -51,10 +51,11 @@ function Contacts() {
         alt="유튜브"
         onClick={handleClick}
       />
+      <div className="w-[1px]" />
       <Image className="cursor-pointer"
         src={notionLogo}
-        width={30}
-        height={30}
+        width={19}
+        height={19}
         id="notion"
         alt="노션"
         onClick={handleClick}
