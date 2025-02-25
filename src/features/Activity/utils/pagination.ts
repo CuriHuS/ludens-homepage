@@ -1,4 +1,3 @@
-// pagination.ts
 import { Activity } from '@/constants/activity';
 
 export const MOBILE_PAGE_SIZE = 6;
