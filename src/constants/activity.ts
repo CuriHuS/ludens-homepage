@@ -10,7 +10,7 @@ export type Activity = {
   description: string;
 };
 
-export const YEAR_LIST = ['전체', '7기', '6기', '5기'];
+export const YEAR_LIST = ['전체', '7기', '6기'];
 
 // 예시로 언리얼 스터디 항목을 배열 형태로 변경
 export const ACTIVITY_LIST: Activity[] = [
