@@ -25,21 +25,3 @@ body {
 * {
   box-sizing: border-box;
 }
-
-.fsac4 {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 32px;
-}
-
-@media (min-width: 720px) {
-  .fsac4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.ktq4 {
-  background-color: #101111;
-  padding: 2rem;
-  border-radius: 10px;
-}
