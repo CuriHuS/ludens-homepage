@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { domMax, LazyMotion } from 'framer-motion';
 import "@/styles/globals.css";
 
 const geistSans = Geist({
@@ -29,11 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header />
-        <main className="flex-1 w-full max-w-7xl px-8 pb-48 mx-auto">
-          {children}
-        </main>
-        <Footer />
+        <LazyMotion features={domMax}>
+          <Header />
+          <main className="flex-1 w-full max-w-7xl px-8 pb-48 mx-auto">
+            {children}
+          </main>
+          <Footer />
+        </LazyMotion>
       </body>
     </html>
   );
