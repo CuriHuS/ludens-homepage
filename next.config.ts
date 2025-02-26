@@ -6,23 +6,23 @@ const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack', 'url-loader']
+      use: ["@svgr/webpack", "url-loader"],
     });
 
     return config;
-  }
+  },
 };
 
 module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/about',
+        source: "/",
+        destination: "/about",
         permanent: true,
-      }
-    ]
-  }
-}
+      },
+    ];
+  },
+};
 
 export default nextConfig;
