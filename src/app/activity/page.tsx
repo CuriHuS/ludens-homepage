@@ -11,8 +11,8 @@ import { staggerHalf } from "@/constants/motion";
 import { ACTIVITY_LIST, YEAR_LIST } from "@/constants/activity";
 import { getCurrentActivities } from "@/features/Activity/utils/pagination";
 
-import BannerSection from "@/components/common/banner";
-import ActivityBanner from "@/assets/banners/banner2.png";
+import BannerSection from "@/components/common/Banner";
+import activityBanner from "@/assets/banners/activity-banner.png";
 
 const FIRST_PAGE = 1;
 const ALL_TAB = "전체";
@@ -42,16 +42,14 @@ export default function Activity() {
   };
 
   return (
-    <section className="w-full flex flex-col mt-20 items-center">
-      <div className="relative w-full min-h-[500px]">
-        <BannerSection
-          imageSrc={ActivityBanner}
-          title="Activities"
-          subtitle="와 다양한 활동을 함께해요!"
-        />
-      </div>
+    <section className="w-full flex flex-col items-center">
+      <BannerSection
+        imageSrc={activityBanner}
+        title="활동"
+        subtitle="루덴스의 다양한 활동을 확인해보세요!"
+      />
 
-      <div className="flex items-center justify-center mt-50">
+      <div className="flex items-center justify-center">
         <FilterYearTab
           currentTab={currentTab}
           setCurrentTab={setCurrentTab}

@@ -17,7 +17,7 @@ type ActivityCardProps = {
 
 export function ActivityCard({ title, type, year, date, img }: ActivityCardProps) {
   // UI 표시용으로 처리
-  const yearText = Array.isArray(year) ? year.join('&') : year; // <-- changed
+  const yearText = Array.isArray(year) ? year.join('·') : year; // <-- changed
 
   return (
     <motion.article

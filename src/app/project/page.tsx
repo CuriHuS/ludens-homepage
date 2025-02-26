@@ -16,8 +16,8 @@ import { ProjectCard, Link } from "@/features/Project/components/projectCard";
 import { staggerHalf } from "@/constants/motion";
 import { PROJECT_LIST } from "@/constants/project";
 import { getCurrentAwards } from "@/features/Award/utils/carousel";
-import BannerSection from "@/components/common/banner";
-import ProjectBanner from "@/assets/banners/banner3.png";
+import BannerSection from "@/components/common/Banner";
+import ProjectBanner from "@/assets/banners/project-banner.png";
 
 const INITIAL_VISIBLE_PROJECTS = 6;
 const ALL_TAB = "전체";
@@ -66,17 +66,15 @@ export default function Projects() {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="w-full flex flex-col mt-20 items-center">
-      <div className="relative w-full min-h-[500px]">
+    <section className="w-full flex flex-col items-center">
+
         <BannerSection
           imageSrc={ProjectBanner}
-          title="Projects"
-          subtitle="의 프로젝트를 구경해보세요!"
+          title="포트폴리오"
+          subtitle="루덴스의 프로젝트를 구경해보세요!"
         />
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-transparent to-black h-full" />
-      </div>
-      <p className="text-3xl text-white font-semibold text-center mt-50 mb-12">
-        AWARDS
+      <p className="text-3xl text-white font-semibold text-center mb-12">
+        수상 기록
       </p>
 
       <div className="w-full">
@@ -116,7 +114,7 @@ export default function Projects() {
       </div>
 
       <p className="text-3xl text-white font-semibold text-center mt-48 mb-12">
-        PROJECTS
+        프로젝트
       </p>
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
