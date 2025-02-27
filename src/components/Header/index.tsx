@@ -25,6 +25,7 @@ export default function Header() {
                             width={80} 
                             height={80} 
                             className="brightness-0 invert"
+                            priority
                         />
                     </Link>
 
