@@ -1,5 +1,5 @@
 import khuLogo from '@/assets/icons/khu.png';
-import com2usLogo from '@/assets/icons/com2us.png';
+import kogLogo from '@/assets/icons/kog.png';
 import { StaticImageData } from 'next/image';
 
 export type Sponsor = {
@@ -15,8 +15,8 @@ export const SPONSOR_LIST: Sponsor[] = [
         link: 'https://software.khu.ac.kr/',
     },
     {
-        title: '컴투스',
-        image: com2usLogo,
-        link: 'https://software.khu.ac.kr/',
+        title: '코그',
+        image: kogLogo,
+        link: 'https://www.kog.co.kr/',
     },
 ]
