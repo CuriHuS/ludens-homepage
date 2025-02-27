@@ -29,6 +29,7 @@
 | **embla-carousel-react** | 8.5.2 | carousel UI 적용하는데 사용 |
 | **framer-motion** | 12.4.5 | animation 적용하는데 사용 |
 | **tailwind-scrollbar-hide** | 2.0.0 | 일부 tab 에서 가로 scrollbar 숨기는 용도로 사용 |
+| **react-countup** | 6.5.3 | count up 효과 적용하는데 사용 |
 | **tailwindcss** | 3.4.17 |  |
 
 <br>
@@ -68,8 +69,6 @@ src
 <br>
 
 ## 📝 Commit Convention
-
-소문자로 작성해주세요.
 
 | 태그 | 사용하는 경우 |
 | :--: | :--: |
