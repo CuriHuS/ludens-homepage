@@ -48,7 +48,7 @@ export const ACTIVITY: ActivityType[] = [
         imgAlt: "게임 제작 발표회",
     },
     {
-        title: "🏢 게임 회사 방문 & 설명회",
+        title: "🏢 게임 회사 견학",
         description: "게임 업계의 현업자 분들과의 만남을 통해 더욱 게임에 대한 흥미를 키우며 궁금증을 해결할 수 있는 행사입니다.",
         img: "/images/about/company.webp",
         imgAlt: "게임 회사 방문 & 설명회",
