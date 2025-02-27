@@ -46,7 +46,7 @@ export function ActivityCard({ title, type, year, date, img }: ActivityCardProps
           </span>
         </div>
         <p className="mt-0.5 text-2xl font-bold leading-[150%] text-white">{title}</p>
-        <p className="text-base font-semibold leading-[150%] text-white/60 whitespace-pre-wrap">{date}</p>
+        <p className="text-base font-medium leading-[150%] text-white/60 whitespace-pre-wrap">{date}</p>
       </div>
     </motion.article>
   );

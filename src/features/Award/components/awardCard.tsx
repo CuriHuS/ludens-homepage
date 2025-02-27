@@ -27,7 +27,7 @@ export function AwardCard({ award }: AwardCardProps) {
         <span className="text-xl md:text-2xl text-white font-bold truncate">
           {placeText}
         </span>
-        <span className="text-sm md:text-base text-white/50 font-semibold truncate ml-4 bg-neutral-700 px-3 py-1 rounded-lg">
+        <span className="text-sm md:text-base text-white/50 font-medium truncate ml-4 bg-neutral-700 px-3 py-1 rounded-lg">
           {award.year}
         </span>
       </div>

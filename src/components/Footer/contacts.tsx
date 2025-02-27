@@ -51,7 +51,7 @@ function Contacts() {
         alt="유튜브"
         onClick={handleClick}
       />
-      <div className="w-[1px]" />
+      <div/>
       <Image className="cursor-pointer"
         src={notionLogo}
         width={19}

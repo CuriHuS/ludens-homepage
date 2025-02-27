@@ -13,14 +13,14 @@ export default function BannerSection({
 }: BannerSectionProps) {
   return (
     <>
-      <div className="absolute top-0 left-0 right-0 min-h-[400px]">
+      <div className="absolute top-10 left-0 right-0 min-h-[300px]">
         <section className="relative">
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black to-transparent to-60%" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-transparent via-45% to-black to-95%" />
           {/* 배너 이미지 */}
           <Image
             src={imageSrc}
             alt="배너 이미지"
-            className="h-[400px] object-cover w-full brightness-[0.8]"
+            className="h-[300px] object-cover w-full brightness-[0.8]"
           />
 
           {/* 배너 위 텍스트 추가 */}
@@ -34,7 +34,7 @@ export default function BannerSection({
           </div>
         </section>
       </div>
-      <div className="h-[400px] mb-4" />
+      <div className="h-[300px] mt-10 mb-24" />
     </>
   );
 }
