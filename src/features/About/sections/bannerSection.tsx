@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import mainBanner from "@/assets/banners/main-banner.jpeg";
 import { motion } from "framer-motion";
