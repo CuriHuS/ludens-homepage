@@ -27,7 +27,7 @@ export default function ActivitySection() {
                 루덴스는 다양한 분야의 스터디, 게임 제작 발표회와 같은 세미나, 대학 간 게임 교류회와 같은 행사 등 대내외 활동을 진행하고 있습니다. 더불어 MT 및 개강총회와 같은 친목의 자리 또한 활발히 마련하고 있습니다.
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl items-stretch">
                 {ACTIVITY.map((activity) => (
                     <motion.div
                         key={activity.title}
