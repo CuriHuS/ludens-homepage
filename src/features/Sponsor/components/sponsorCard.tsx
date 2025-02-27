@@ -8,7 +8,7 @@ type SponsorCardProps = {
 
 export default function SponsorCard({ title, image, link }: SponsorCardProps) {
     return (
-        <a href={link} className="flex items-center justify-center h-[120px]">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-[120px]">
             <Image
                 src={image}
                 alt={title}
