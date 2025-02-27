@@ -6,7 +6,7 @@ import ProjectSection from "@/features/Project/sections/projectSection";
 
 export const metadata: Metadata = {
   title: "포트폴리오",
-  description: "루덴스에서 진행된 프로젝트를 둘러볼 수 있습니다"
+  description: "루덴스 부원들이 진행한 다양한 프로젝트를 확인해보세요"
 }
 
 export default function Projects() {
@@ -15,7 +15,7 @@ export default function Projects() {
       <BannerSection
         imageSrc={ProjectBanner}
         title="Portfolio"
-        subtitle="루덴스에서 진행된 프로젝트를 둘러볼 수 있습니다"
+        subtitle="루덴스 부원들이 진행한 다양한 프로젝트를 확인해보세요"
       />
       <AwardSection />
       <ProjectSection />

@@ -5,7 +5,7 @@ import ActivitySection from "@/features/Activity/sections/activitySection";
 
 export const metadata: Metadata = {
   title: "활동",
-  description: "루덴스의 다양한 활동을 확인해볼 수 있습니다"
+  description: "루덴스의 여러 활동을 확인해보세요"
 }
 
 export default function Activity() {
@@ -14,7 +14,7 @@ export default function Activity() {
       <BannerSection
         imageSrc={activityBanner}
         title="Activities"
-        subtitle="루덴스의 다양한 활동을 확인해볼 수 있습니다"
+        subtitle="루덴스의 여러 활동을 확인해보세요"
       />
 
       <ActivitySection />
