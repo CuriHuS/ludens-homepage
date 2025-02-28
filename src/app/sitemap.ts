@@ -7,25 +7,25 @@ import { MetadataRoute } from 'next';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         {
-            url: 'https://ludens-homepage.vercel.app/about',
+            url: 'https://khuludens.com/about',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 1.0,
         },
         {
-            url: 'https://ludens-homepage.vercel.app/activity',
+            url: 'https://khuludens.com/activity',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://ludens-homepage.vercel.app/project',
+            url: 'https://khuludens.com/project',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: 'https://ludens-homepage.vercel.app/sponsor',
+            url: 'https://khuludens.com/sponsor',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 0.6,

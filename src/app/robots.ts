@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
           allow: '/',
         //   disallow: '/private/',
         },
-        sitemap: 'https://ludens-homepage.vercel.app/sitemap.xml', // 실제 배포 시 변경
+        sitemap: 'https://khuludens.com/sitemap.xml', // 실제 배포 시 변경
       }
 }
