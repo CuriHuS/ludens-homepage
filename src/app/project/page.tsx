@@ -5,7 +5,9 @@ import AwardSection from "@/features/Award/sections/awardSection";
 import ProjectSection from "@/features/Project/sections/projectSection";
 
 export const metadata: Metadata = {
-  title: "포트폴리오",
+  title: {
+    absolute: "포트폴리오",
+  },
   description: "루덴스 부원들이 진행한 다양한 프로젝트를 확인해보세요"
 }
 

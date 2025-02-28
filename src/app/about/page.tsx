@@ -6,7 +6,7 @@ import ActivitySection from '@/features/About/sections/activitySection';
 
 export const metadata: Metadata = {
   title: {
-    absolute: "루덴스",
+    absolute: "LUDENS : 경희대학교 게임 제작 동아리",
   },
 }
 

@@ -4,7 +4,9 @@ import { Metadata } from "next";
 import ActivitySection from "@/features/Activity/sections/activitySection";
 
 export const metadata: Metadata = {
-  title: "활동",
+  title: {
+    absolute: "활동",
+  },
   description: "루덴스의 여러 활동을 확인해보세요"
 }
 

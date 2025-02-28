@@ -4,7 +4,9 @@ import SponsorSection from "@/features/Sponsor/sections/sponsorSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "후원",
+  title: {
+    absolute: "후원",
+  },
   description: "루덴스 운영에 도움을 주는 후원사들입니다"
 }
 

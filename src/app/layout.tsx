@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://ludens-homepage.vercel.app'), // 루덴스 홈페이지 주소 --> 실제 배포 시 변경
   title: {
-    default: '루덴스',
-    template: '%s | 루덴스'
+    default: 'LUDENS : 경희대학교 게임 제작 동아리',
+    template: '%s | LUDENS'
   },
   description: '루덴스는 경희대학교 소프트웨어융합학과 게임콘텐츠트랙 학생들이 모여 시작한 동아리입니다. 기획, 디자인, 개발 등 게임의 전반적인 과정을 경험할 수 있으며, 부원들이 열정을 가지고 성장할 수 있도록 지원합니다.',
   openGraph: {
