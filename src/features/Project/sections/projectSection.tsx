@@ -16,8 +16,8 @@ export default function ProjectSection() {
     };
 
     return (
-        <div className="w-full justify-items-center">
-            <p className="text-3xl text-white font-semibold mt-48 mb-12">
+        <div className="flex flex-col w-full items-center">
+            <p className="text-3xl text-white text-center font-semibold mt-48 mb-12">
                 프로젝트
             </p>
             <AnimatePresence mode="wait" initial={false}>

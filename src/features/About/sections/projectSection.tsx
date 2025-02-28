@@ -45,7 +45,7 @@ export default function ProjectSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-8 max-w-4xl text-lg text-center font-medium text-white"
+                className="mb-8 max-w-4xl text-base md:text-lg text-center font-medium text-white"
             >
                 루덴스 부원들이 진행한 다양한 프로젝트를 확인해보세요.
             </motion.p>

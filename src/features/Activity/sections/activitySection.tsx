@@ -39,7 +39,7 @@ export default function ActivitySection() {
     };
 
     return (
-        <div className="w-full">
+        <section className="flex flex-col w-full items-center">
             <div className="flex items-center justify-center">
                 <FilterYearTab
                     currentTab={currentTab}
@@ -87,6 +87,6 @@ export default function ActivitySection() {
                 currentPage={currentPage}
                 handlePageClick={onClickPage}
             />
-        </div>
+        </section>
     );
 }
