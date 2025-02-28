@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: '루덴스는 경희대학교 소프트웨어융합학과 게임콘텐츠트랙 학생들이 모여 시작한 동아리입니다. 기획, 디자인, 개발 등 게임의 전반적인 과정을 경험할 수 있으며, 부원들이 열정을 가지고 성장할 수 있도록 지원합니다.',
   },
   verification: {
-    google: 'g_Bal-bPEVf_V_gmZBW9djHizKgL3xQnE2Z50n06fpE',
+    google: 'SUGzZJoqyO5tn6rdMJz7AG2mtrt7srdLPgPpVdlJuls',
   }
 };
 
