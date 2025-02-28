@@ -1,5 +1,6 @@
 // src/app/activity/[id]/page.tsx
-'use client'; // (클라이언트 컴포넌트인 경우)
+// "use client" 제거
+import React from 'react';
 
 interface ActivityPageProps {
   params: { id: string };
