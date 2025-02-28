@@ -23,7 +23,7 @@ export default function ActivityCard({ imageSrc, imageAlt, title, description }:
       {/* 텍스트 영역: 남은 공간 채우기 */}
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-        <p className="text-base text-white flex-grow">{description}</p>
+        <p className="text-base text-gray-300 flex-grow">{description}</p>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ export function ProjectCard({ title, subTitle, img, links }: ProjectCardProps) {
             />
             <div className="absolute inset-0 flex flex-col gap-2 p-6 opacity-0 group-hover:opacity-100 hover:backdrop-blur-sm transition-opacity duration-300">
                 <p className="mt-0.5 text-2xl font-bold leading-[150%] text-white">{title}</p>
-                <p className="text-base font-medium leading-[150%] text-white whitespace-pre-wrap">{subTitle}</p>
+                <p className="text-base font-medium leading-[150%] text-gray-300 whitespace-pre-wrap">{subTitle}</p>
                 {links && (
                     <div className="mt-auto flex items-center gap-1">
                         {links.map(link => (
