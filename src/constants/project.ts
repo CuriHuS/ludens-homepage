@@ -4,6 +4,9 @@ export type Project = {
     id: string;
     title: string;
     subTitle: string;
+    teamMembers?: string;
+    period?: string;
+    techStack?: string;
     description: string;
     thumbnailFormat?: string;
     links?: Link[];
@@ -14,6 +17,8 @@ export const PROJECT_LIST: Project[] = [
         id: 'wizard',
         title: 'Wi, Zard!',
         subTitle: '2인용 멀티 3D 협동 소울라이크 게임',
+        teamMembers: '개발: 김수연(소융22), 신동준(소융23), 최현승(소융20), 허건호(소융21) \n 아트: 마현아(디콘21), 이윤아(디콘22)',
+        period: '2024.06 ~ 2024.11',
         description: '긴 설명',
         links: [
             {
