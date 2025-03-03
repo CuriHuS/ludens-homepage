@@ -23,6 +23,20 @@ export const PROJECT_LIST: Project[] = [
         ]
     },
     {
+        id: 'sekhmet43',
+        title: 'Sekhmet-43',
+        subTitle: '3D 스페이스 호러 게임',
+        description: '긴 설명',
+        links: [
+            {
+                type: 'youtube',
+                href: 'https://youtu.be/2vgQ1L274mo?si=39tO5KNNsrlK-_jh',
+            },
+            { type: 'github', href: 'https://github.com/Show-Boo/Sekhmet-43' },
+
+        ]
+    },
+    {
         id: 'udt',
         title: 'Urban Design Tool (UDT)',
         subTitle: '환경 친화적인 도시를 설계할 수 있는 능력을 키우는 학습 도구',
