@@ -4,9 +4,13 @@ export type Project = {
     id: string;
     title: string;
     subTitle: string;
+    teamMembers?: string;
+    period?: string;
+    techStack?: string[];
     description: string;
     thumbnailFormat?: string;
     links?: Link[];
+    extraImages?: string[];
 };
 
 export const PROJECT_LIST: Project[] = [
@@ -14,13 +18,21 @@ export const PROJECT_LIST: Project[] = [
         id: 'wizard',
         title: 'Wi, Zard!',
         subTitle: '2인용 멀티 3D 협동 소울라이크 게임',
-        description: '긴 설명',
+        teamMembers: '개발: 최현승(소융20), 허건호(소융21), 김수연(소융22), 신동준(소융23) \n아트: 마현아(디콘21), 이윤아(디콘22)',
+        period: '2024.06 ~ 2024.11',
+        description: '긴 설명 \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd \n dd',
+        techStack: ['Unity', 'Git', 'Photon PUN2'],
         links: [
             {
                 type: 'youtube',
                 href: 'https://www.youtube.com/watch?v=BJxZDun471U',
             },
-        ]
+        ],
+        extraImages: [
+            '/images/project/wizard/1.webp',
+            '/images/project/wizard/2.webp',
+            '/images/project/wizard/3.webp'
+          ],
     },
     {
         id: 'sekhmet43',
@@ -40,7 +52,10 @@ export const PROJECT_LIST: Project[] = [
         id: 'udt',
         title: 'Urban Design Tool (UDT)',
         subTitle: '환경 친화적인 도시를 설계할 수 있는 능력을 키우는 학습 도구',
+        teamMembers: '최현승(소융20), 허건호(소융21), 김수연(소융22), 신동준(소융23)',
+        period: '2024.05.10 ~ 2024.05.11',
         description: '긴 설명',
+        techStack: ['Unity', 'Git'],
         links: [
             {
                 type: 'github',
@@ -94,6 +109,9 @@ export const PROJECT_LIST: Project[] = [
         id: 'moori',
         title: '쇼츠만 본지 30년하고 8개월, 내가 던전을 깰 수 있을 리 없잖아 무리무리! (※ 무리가 아니었다?!)',
         subTitle: '2D 장애물 피하기 게임',
+        teamMembers: '김수은, 권신혁, 송예린, 최현승',
+        period: '2023.08 ~ 2023.11',
+        techStack: ['Unity', 'Git'],
         description: '긴 설명',
         links: [
             {
