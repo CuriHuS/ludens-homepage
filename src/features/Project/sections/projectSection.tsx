@@ -1,19 +1,20 @@
 // src/features/Project/sections/projectSection.tsx
-'use client';
+"use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProjectCard, Link } from "@/features/Project/components/projectCard";
 import { staggerHalf } from "@/constants/motion";
-import { PROJECT_LIST, Project } from "@/constants/project";
-// 모달 파일은 index.tsx로 생성되어 있으므로, 해당 폴더의 default export를 가져옵니다.
-import ProjectModal from "@/features/Project/components";
+import { PROJECT_LIST } from "@/constants/project";
 
 const INITIAL_VISIBLE_PROJECTS = 6;
 
 export default function ProjectSection() {
-  const [visibleProjects, setVisibleProjects] = useState(INITIAL_VISIBLE_PROJECTS);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [visibleProjects, setVisibleProjects] = useState(
+    INITIAL_VISIBLE_PROJECTS
+  );
+  const router = useRouter();
 
   const onClickShowMore = () => {
     setVisibleProjects((prev) => prev + INITIAL_VISIBLE_PROJECTS);
@@ -34,12 +35,15 @@ export default function ProjectSection() {
         >
           {PROJECT_LIST.slice(0, visibleProjects).map((project) => (
             <ProjectCard
+              id={project.id}
               key={project.id}
-              img={`/images/project/${project.id}/thumbnail.${project.thumbnailFormat || "webp"}`}
+              img={`/images/project/${project.id}/thumbnail.${
+                project.thumbnailFormat || "webp"
+              }`}
               title={project.title}
               subTitle={project.subTitle}
               links={project.links as Link[]}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => router.push(`/project/${project.id}`)}
             />
           ))}
         </motion.div>
@@ -52,14 +56,6 @@ export default function ProjectSection() {
           더보기
         </button>
       )}
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 }
