@@ -4,13 +4,15 @@ import { generateMetadata } from "@/features/Project/utils/projectMetadata";
 import ImageSlider from "@/features/Project/components/ImageSlider";
 export { generateMetadata };
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { id?: string };
+  params: Promise<{ id?: string }>;
 }) {
-  if (!params?.id) return notFound();
-  const project = PROJECT_LIST.find((p) => p.id === params.id);
+
+  const {id} = await params;
+  if (!id) return notFound();
+  const project = PROJECT_LIST.find((p) => p.id === id);
 
   if (!project) return notFound();
 
@@ -29,7 +31,7 @@ export default function ProjectDetailPage({
             <p>{project.subTitle}</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 mt-8">
+          <div className="flex flex-col lg:flex-row gap-6 mt-8">
             <ImageSlider images={images} projectTitle={project.title} />
 
             {/* 프로젝트 요약 */}

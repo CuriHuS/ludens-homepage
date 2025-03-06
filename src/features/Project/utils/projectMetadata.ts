@@ -6,13 +6,15 @@ export async function generateMetadata({
 }: {
   params: { id?: string };
 }): Promise<Metadata> {
-  if (!params.id) {
+
+  const {id} = await params;
+  if (!id) {
     return {
       title: "프로젝트를 찾을 수 없습니다.",
       description: "존재하지 않는 프로젝트입니다.",
     };
   }
-  const project = PROJECT_LIST.find((p) => p.id === params.id);
+  const project = PROJECT_LIST.find((p) => p.id === id);
 
   if (!project) {
     return {
