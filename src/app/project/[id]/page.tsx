@@ -9,7 +9,7 @@ export default function ProjectDetailPage({
 }: {
   params: { id?: string };
 }) {
-  if (!params.id) return notFound();
+  if (!params?.id) return notFound();
   const project = PROJECT_LIST.find((p) => p.id === params.id);
 
   if (!project) return notFound();
