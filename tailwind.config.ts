@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import scrollbarHide from "tailwind-scrollbar-hide";
 
 export default {
   content: [
@@ -23,17 +24,17 @@ export default {
           700: "#EA1A24",
           800: "#D2131D",
           900: "#B21018",
-          950: "#A40F16"
-        }
+          950: "#A40F16",
+        },
       },
       backgroundSize: {
-        'size-200': '200% 200%',
+        "size-200": "200% 200%",
       },
       backgroundPosition: {
-        'pos-0': '0% 0%',
-        'pos-100': '100% 100%',
+        "pos-0": "0% 0%",
+        "pos-100": "100% 100%",
       },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [scrollbarHide],
 } satisfies Config;
