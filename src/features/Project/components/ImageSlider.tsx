@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type ImageSliderProps = {
   images: string[];
@@ -23,7 +24,7 @@ export default function ImageSlider({
   return (
     <div className="w-full md:w-[600px]">
       <div className="relative aspect-[16/9]">
-        <img
+        <Image
           src={images[currentImageIndex]}
           alt={`${projectTitle} image ${currentImageIndex + 1}`}
           className="absolute inset-0 w-full h-full object-cover rounded-xl transition-transform duration-300"
