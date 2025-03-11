@@ -1,23 +1,33 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-import { ActivityType } from '@/constants/activity';
-import { defaultFadeIn } from '@/constants/motion';
+import { ActivityType } from "@/constants/activity";
+import { defaultFadeIn } from "@/constants/motion";
 
 type ActivityCardProps = {
+  id?: string;
   title: string;
   type: ActivityType;
   // year가 string | string[] 모두 가능
-  year: string | string[];  // <-- changed
+  year: string | string[]; // <-- changed
   date: string;
   img: string;
+  onClick?: () => void;
 };
 
-export function ActivityCard({ title, type, year, date, img }: ActivityCardProps) {
+export function ActivityCard({
+  id,
+  title,
+  type,
+  year,
+  date,
+  img,
+  onClick,
+}: ActivityCardProps) {
   // UI 표시용으로 처리
-  const yearText = Array.isArray(year) ? year.join('·') : year; // <-- changed
+  const yearText = Array.isArray(year) ? year.join("·") : year; // <-- changed
 
   return (
     <motion.article
@@ -25,6 +35,13 @@ export function ActivityCard({ title, type, year, date, img }: ActivityCardProps
       initial="initial"
       animate="animate"
       variants={defaultFadeIn}
+      onClick={() => {
+        if (onClick) {
+          onClick();
+        } else if (id) {
+          window.location.href = `/activity/${id}`;
+        }
+      }}
     >
       <Image
         className="object-cover object-center rounded-xl group-hover:brightness-[0.3]"
@@ -45,8 +62,12 @@ export function ActivityCard({ title, type, year, date, img }: ActivityCardProps
             {yearText}
           </span>
         </div>
-        <p className="mt-0.5 text-2xl font-bold leading-[150%] text-white">{title}</p>
-        <p className="text-base font-medium leading-[150%] text-white/60 whitespace-pre-wrap">{date}</p>
+        <p className="mt-0.5 text-2xl font-bold leading-[150%] text-white">
+          {title}
+        </p>
+        <p className="text-base font-medium leading-[150%] text-white/60 whitespace-pre-wrap">
+          {date}
+        </p>
       </div>
     </motion.article>
   );
