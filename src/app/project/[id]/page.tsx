@@ -2,15 +2,30 @@ import { notFound } from "next/navigation";
 import { PROJECT_LIST } from "@/constants/project";
 import { generateMetadata } from "@/features/Project/utils/projectMetadata";
 import ImageSlider from "@/features/Project/components/ImageSlider";
+import youtubeLogo from "@/assets/icons/youtube.svg";
+import githubLogo from "@/assets/icons/github.svg";
+import steamLogo from "@/assets/icons/steam.svg";
+import Link from "next/link";
+import Image from "next/image";
 export { generateMetadata };
+
+export type Link = {
+  type: "youtube" | "github" | "steam";
+  href: string;
+};
+
+const logoMap = {
+  youtube: youtubeLogo,
+  github: githubLogo,
+  steam: steamLogo,
+};
 
 export default async function ProjectDetailPage({
   params,
 }: {
   params: Promise<{ id?: string }>;
 }) {
-
-  const {id} = await params;
+  const { id } = await params;
   if (!id) return notFound();
   const project = PROJECT_LIST.find((p) => p.id === id);
 
@@ -21,6 +36,7 @@ export default async function ProjectDetailPage({
   }`;
   const extraImages = project.extraImages ?? [];
   const images = [thumbnail, ...extraImages];
+  const Links = project.links ?? [];
 
   return (
     <div className="flex items-center justify-center bg-black/50 min-h-screen">
@@ -29,6 +45,24 @@ export default async function ProjectDetailPage({
           <div className="bg-gray-700/70 rounded-[10px] p-6">
             <p className="font-bold text-4xl mb-1">{project.title}</p>
             <p>{project.subTitle}</p>
+            {Links && (
+              <div className="mt-auto flex items-center gap-1 justify-end">
+                {Links.map((link) => (
+                  <span key={link.type} className="flex items-end">
+                    <Link href={link.href} target="_blank" rel="noreferrer">
+                      <Image
+                        className="cursor-pointer hover:scale-110 transition-all duration-300"
+                        src={logoMap[link.type]}
+                        width={40}
+                        height={40}
+                        id={link.type}
+                        alt={`${link.type} link`}
+                      />
+                    </Link>
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col lg:flex-row gap-6 mt-8">
