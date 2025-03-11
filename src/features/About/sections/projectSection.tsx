@@ -14,10 +14,12 @@ import {
   PrevButton,
   NextButton,
 } from "@/components/common/CarouselArrowButton";
+import { useRouter } from "next/navigation";
 
 export default function ProjectSection() {
   // Get a subset of projects (8 projects)
   const featuredProjects = PROJECT_LIST.slice(0, 8);
+  const router = useRouter();
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -73,6 +75,7 @@ export default function ProjectSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="flex-[0_0_auto] w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                onClick={() => router.push(`/project/${project.id}`)}
               >
                 <ProjectCard
                   img={`/images/project/${project.id}/thumbnail.${
