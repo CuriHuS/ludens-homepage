@@ -8,7 +8,7 @@ export async function generateMetadata({
 }: {
   params: tParams;
 }): Promise<Metadata> {
-  const { id } = await params; // ✅ `params`가 Promise이므로 `await` 사용
+  const { id } = await params;
 
   if (!id) {
     return {

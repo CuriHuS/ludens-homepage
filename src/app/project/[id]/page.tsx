@@ -43,8 +43,10 @@ export default async function ProjectDetailPage({
       <div className="relative w-full max-w-6xl mt-10 overflow-y-auto bg-neutral-900 text-white rounded-xl p-4 md:p-8 scrollbar-hide">
         <div className="flex flex-col gap-6 mt-8">
           <div className="bg-gray-700/70 rounded-[10px] p-6">
-            <p className="font-bold text-4xl mb-1">{project.title}</p>
-            <p>{project.subTitle}</p>
+            <p className="font-bold text-2xl md:text-4xl mb-1">
+              {project.title}
+            </p>
+            <p className="mt-2">{project.subTitle}</p>
             {Links && (
               <div className="mt-auto flex items-center gap-1 justify-end">
                 {Links.map((link) => (
