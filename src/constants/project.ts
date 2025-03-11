@@ -64,6 +64,22 @@ export const PROJECT_LIST: Project[] = [
         ]
     },
     {
+        id: 'SoulShard',
+        title: 'SoulShard',
+        subTitle: 'Sekiro 전투 형식의 액션 RPG 게임',
+        description: '다크소울과 엘든링에 나오는 보스들과 세키로의 전투 시스템을 합치면 재밌을 것 같다는 생각에서 시작한 프로젝트입니다. \n 보스들은 엘든링과 보스들의 패턴과 유사한 점이 많습니다. 이러한 적들을 세키로의 패링 시스템을 이용하여 무찔러야 합니다. \n게임은 언리얼 엔진5로 제작했습니다.',
+        links: [
+            {
+                type: 'youtube',
+                href: 'https://youtu.be/nEiit4C9zJs?si=n9tbqRvqjJH3vM70',
+            },
+            {
+                type: 'github',
+                href: 'https://github.com/geokim4491/SoulShard',
+            }
+        ]
+    },
+    {
         id: 'kingmini',
         title: 'KingMini',
         subTitle: '3D 싱글 플랫포머 게임',
@@ -148,6 +164,22 @@ export const PROJECT_LIST: Project[] = [
                 href: 'https://youtu.be/_bND5x9Bou4',
             },
         ],
+    },
+    {
+        id: 'soulTypeRPGgame',
+        title: '소울 형식 RPG 게임',
+        subTitle: '소울 형식 RPG 게임',
+        description: '이 게임의 목표는 적들과 싸워 적을 무찌르는 것 입니다. 적을 무찌른다는 하나의 큰 목적을 가지고 플레이어는 체력과 스테미나를 잘 활용해 게임을 플레이합니다.',
+        links: [
+            {
+                type: 'youtube',
+                href: 'https://www.youtube.com/watch?v=zujtHZ-2FRo',
+            },
+            {
+                type: 'github',
+                href: 'https://github.com/geokim4491/Soul-Style-Game',
+            }
+        ]
     },
     {
         id: 'vr-safe-simulation-with-rl',

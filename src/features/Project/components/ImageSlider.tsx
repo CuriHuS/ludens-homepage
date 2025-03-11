@@ -14,9 +14,14 @@ export default function ImageSlider({
 }: ImageSliderProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  if (images.length === 0) {
+    return <p className="text-center text-gray-500">이미지가 없습니다.</p>;
+  }
+
   const handlePrev = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
   const handleNext = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
   };
@@ -27,6 +32,8 @@ export default function ImageSlider({
         <Image
           src={images[currentImageIndex]}
           alt={`${projectTitle} image ${currentImageIndex + 1}`}
+          width={600}
+          height={337}
           className="absolute inset-0 w-full h-full object-cover rounded-xl transition-transform duration-300"
         />
         {images.length > 1 && (
