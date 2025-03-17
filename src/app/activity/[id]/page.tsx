@@ -34,7 +34,6 @@ export default async function ActivityDetailPage({
             <p className="font-bold text-2xl mb-1 md:text-4xl">
               {activity.title}
             </p>
-            <p className="mt-3">{activity.description}</p>
           </div>
           <div className="flex flex-col gap-6 mt-8 justify-center items-center">
             <div className="w-full lg:w-[700px] ">

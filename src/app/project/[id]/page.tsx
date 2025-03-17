@@ -20,6 +20,37 @@ const logoMap = {
   steam: steamLogo,
 };
 
+const highlightKeywords = (text: string, keywords: string[]) => {
+  return text
+    .split(new RegExp(`(${keywords.join("|")})`, "g"))
+    .map((part, index) =>
+      keywords.includes(part) ? (
+        <strong key={index} className="font-bold">
+          {part}
+        </strong>
+      ) : (
+        part
+      )
+    );
+};
+
+const keywords = [
+  "📑 게임 전반의 디자인 기획",
+  "🏃‍♂️ 플레이어, 보스별 3D 애니메이션 제작",
+  "🔨 인게임 에셋 제작",
+  "🌏 캐릭터 간 크기 차이를 활용한 맵 디자인",
+  "🎮 게임의 흐름을 반영한 레벨디자인",
+  "🎭 시각적 요소를 통한 분위기 연출",
+  "🥏 게임 진행도에 따른 기믹요소와 다양한 상호작용 오브젝트",
+  "🎵 음향: 손수 만든 BGM",
+  "게임 제목",
+  "기획 의도",
+  "장르",
+  "이용대상자",
+  "세계관 및 줄거리",
+  "몰입형 게임플레이를 완성하는 설계와 연출",
+];
+
 export default async function ProjectDetailPage({
   params,
 }: {
@@ -46,7 +77,7 @@ export default async function ProjectDetailPage({
             <p className="font-bold text-2xl md:text-4xl mb-1">
               {project.title}
             </p>
-            <p className="mt-2">{project.subTitle}</p>
+            <p className="mt-3">{project.subTitle}</p>
             {Links && (
               <div className="mt-auto flex items-center gap-1 justify-end">
                 {Links.map((link) => (
@@ -114,8 +145,8 @@ export default async function ProjectDetailPage({
           {/* 프로젝트 설명 */}
           <section className="bg-[#2f3038] rounded-[10px] p-6">
             <h2 className="text-lg font-bold mb-4">프로젝트 설명</h2>
-            <div className=" overflow-auto whitespace-pre-wrap ">
-              {project.description}
+            <div className="overflow-auto whitespace-pre-wrap">
+              {highlightKeywords(project.description, keywords)}
             </div>
           </section>
         </div>
