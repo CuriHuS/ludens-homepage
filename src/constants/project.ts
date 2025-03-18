@@ -1,5 +1,4 @@
 import { Link } from "@/features/Project/components/projectCard";
-import { m } from "framer-motion";
 
 export type Project = {
   id: string;
