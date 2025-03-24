@@ -114,7 +114,7 @@ export type Award = {
       year: '2022',
       title: '경희대학교 SW Festival',
       place: '주니어상',
-      holder: 'Sun Mouse',
+      holder: 'Shut The Mouse',
     },
   ];
   

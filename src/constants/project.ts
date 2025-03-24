@@ -92,7 +92,8 @@ export const PROJECT_LIST: Project[] = [
         title: 'KingMini',
         subTitle: '3D 싱글 플랫포머 게임',
         teamMembers: '김채연(소융21), 송인서(소융21), 조소연(소융21), 한세은(소융21), 허건호(소융21)',
-        description: '',
+        period: '2023.01 ~ 2023.03(약 3개월)',
+        description: 'KingMini는 3D 싱글 플레이어 플랫포머 게임입니다. 귀엽고 아기자기한 로우폴리 그래픽으로 되어 있으며 장애물들을 피해 목적지에 도달해야하는 게임입니다! \n\n✔ 다양한 맵\n 사무실, 탁구장, 다용도실, 화장실 등등 다양한 스테이지를 클리어해 보세요!\n\n 🔥 어려운 난이도\n 이 게임은 어렵습니다! 예상치 못한 함정이 쏟아집니다! \n\n 🗺 길 찾기\n회사 곳곳 배치되어 있는 물건들을 활용해 길을 개척해 나가세요!',
         techStack: ['Unity', 'Git'],
         links: [
             {
@@ -155,11 +156,13 @@ export const PROJECT_LIST: Project[] = [
         
     },
     {
-        id: 'sun-mouse',
-        title: 'Sun Mouse',
+        id: 'shut-the-mouse',
+        title: 'Shut The Mouse',
         subTitle: '2D 싱글 슈팅 게임',
         teamMembers: '김채연(소융21), 송인서(소융21), 한세은(소융21), 허건호(소융21)',
-        description: '',
+        period:' 2022.09~2022.12',
+        description: 'Shut The Mouse는 2D 탑뷰 슈팅 게임입니다. 플레이어는 맵 속 다양한 적과 함정을 마주하게 됩니다. 다양한 무기를 습득하고 적들의 공격을 피하여 앞으로 나아가야 합니다. \n\n👾다양한 적\n서로 다른 방법으로 공격해 오는 적들에 맞서 싸우세요!\n\n🔫다양한 무기\n특색있는 무기들을 찾아 다양한 방법으로 싸워보세요!\n\n👑보스 몬스터\n다양한 패턴으로 공격해오는 보스를 이겨 스테이지를 클리어하세요!',
+        techStack: ['Unity'],
         links: [
             {
                 type: 'youtube',
@@ -206,8 +209,10 @@ export const PROJECT_LIST: Project[] = [
         id: 'strange-saviors',
         title: 'Strange Saviors',
         subTitle: '3D 액션 RPG 게임',
-        teamMembers: '송인서(소융21), 허건호(소융21)',
-        description: '',
+        teamMembers: '김솔미 송인서(소융21), 허건호(소융21)',
+        period: '2022.09~2022.12 (약 3개월)',
+        description: 'Strange Savior은 싱글 플레이어 액션 게임입니다.플레이어는 3개의 캐릭터를 조작하여 적과 싸워야 합니다. 화려한 액션과 다양한 조작을 활용하여 적을 무찌르고, 도시를 구하세요! \n\n⚔화려한 액션\n 콤보 어택으로 다양한 모션을 즐기세요! 화려한 이펙트로 타격감을 느끼세요! \n\n 💀보스 몬스터\n다양한 패턴으로 공격해오는 보스에 맞서 싸우세요! \n\n🔁캐릭터 교체\n3개의 캐릭터를 교체하면서 서로 다른 스킬을 사용해보세요! 특수 스킬은 연계해서 사용할 수 있습니다!',
+        techStack: ['Unreal Engine 5'],
         links: [
             {
                 type: 'youtube',
