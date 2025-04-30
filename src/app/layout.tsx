@@ -58,6 +58,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </LazyMotion>
+        <Analytics />
       </body>
     </html>
   );
