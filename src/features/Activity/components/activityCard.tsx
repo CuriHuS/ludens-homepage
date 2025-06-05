@@ -44,7 +44,7 @@ export function ActivityCard({
       }}
     >
       <Image
-        className="object-cover object-center rounded-xl group-hover:brightness-[0.3]"
+        className="object-cover object-center rounded-xl group-hover:brightness-[0.3] transition-all duration-200"
         src={img}
         alt={title}
         fill
@@ -52,7 +52,7 @@ export function ActivityCard({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 to-transparent group-hover:opacity-0" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end gap-0 p-6 z-20 group-hover:backdrop-blur-sm">
         <div className="absolute top-4 left-4 flex gap-2 z-20">
           <span className="px-2.5 py-1 text-base font-medium bg-neutral-700 backdrop-blur-sm rounded-lg text-white">

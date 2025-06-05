@@ -7,7 +7,7 @@ export default function IntroSection() {
   return (
     <section className="flex flex-col items-center mt-64">
       <p className="mb-8 text-3xl font-semibold text-white text-center">
-        열정으로 이루는 <span className="text-red-300">도전, 성장</span>
+        열정으로 이루는 도전, 성장
       </p>
       <p className="mb-16 max-w-4xl text-base md:text-lg text-center font-medium text-white ">
         루덴스는 경희대학교 소프트웨어융합학과 게임콘텐츠트랙 학생들이 모여
