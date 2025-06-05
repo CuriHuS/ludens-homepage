@@ -8,7 +8,7 @@ const OriginFooter = () => {
                     <p className="text-sm text-center md:text-left text-gray-300 font-normal mb-3 md:mb-0">
                         Copyright ⓒ 2025 Ludens. All rights reserved.
                         <br />
-                        Created by <span className="text-white font-semibold"><a href="https://grden.github.io/about/" target="_blank" rel="noopener noreferrer">김정원</a>, <a href="https://github.com/CuriHuS/" target="_blank" rel="noopener noreferrer">최현승</a>
+                        Created by <span className="text-white font-semibold"><a href="https://grden.github.io" target="_blank" rel="noopener noreferrer">김정원</a>, <a href="https://github.com/CuriHuS/" target="_blank" rel="noopener noreferrer">최현승</a>
                         , 한채연</span>
                     </p>
                     <div className="flex flex-col md:flex-row gap-2 items-center">
