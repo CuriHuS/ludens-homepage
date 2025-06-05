@@ -7,6 +7,7 @@ import { menuItemList } from "./menuItemList";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ludensLogo from "@/assets/icons/ludens.svg";
+import * as gtag from '@/components/ga/gtag';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +20,11 @@ export default function Header() {
                         href="/"
                         className="text-3xl font-bold text-white hover:text-gray-200 transition-colors"
                     >
-                        <Image 
-                            src={ludensLogo} 
-                            alt="logo" 
-                            width={80} 
-                            height={80} 
+                        <Image
+                            src={ludensLogo}
+                            alt="logo"
+                            width={80}
+                            height={80}
                             className="brightness-0 invert"
                             priority
                         />
@@ -60,6 +61,13 @@ export default function Header() {
                                     key={item.label}
                                     href={item.href}
                                     className="text-lg font-bold text-gray-300 hover:text-white transition-colors"
+                                    onClick={() => {
+                                        gtag.event("select_content", {
+                                            event_category: 'navigation',
+                                            event_label: `menu_${item.label}`,
+                                            value: 1
+                                        });
+                                    }}
                                 >
                                     {item.label}
                                 </Link>
@@ -92,7 +100,14 @@ export default function Header() {
                                                 key={item.label}
                                                 href={item.href}
                                                 className="text-lg font-bold text-gray-300 hover:text-white transition-colors"
-                                                onClick={() => setIsMenuOpen(false)}
+                                                onClick={() => {
+                                                    setIsMenuOpen(false)
+                                                    gtag.event("select_content", {
+                                                        event_category: 'navigation',
+                                                        event_label: `menu_${item.label}`,
+                                                        value: 1
+                                                    });
+                                                }}
                                             >
                                                 {item.label}
                                             </Link>
@@ -101,7 +116,7 @@ export default function Header() {
                                     <motion.div
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.1*menuItemList.length }}
+                                        transition={{ delay: 0.1 * menuItemList.length }}
                                         className="inline-flex"
                                     >
                                         <ApplyButton />
@@ -112,6 +127,6 @@ export default function Header() {
                     )}
                 </AnimatePresence>
             </nav>
-        </header>
+        </header >
     );
 }
