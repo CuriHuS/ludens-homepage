@@ -36,6 +36,7 @@ export default function ImageSlider({
           width={600}
           height={337}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+          priority={true}
         />
         {images.length > 1 && (
           <>
