@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { ACTIVITY_LIST } from "@/constants/activity";
 import { generateMetadata } from "@/features/Activity/utils/activityMetadata";
-//import ImageSlider from "@/features/Project/components/ImageSlider";
 import Image from "next/image";
 export { generateMetadata };
 
