@@ -36,10 +36,15 @@ export default function ImageCarousel({
           width={600}
           height={337}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
-          priority={true}
+          sizes="(max-width: 768px) 100vw, 1000px"
+          priority={currentImageIndex === 0}
+          quality={85}
         />
         {images.length > 1 && (
           <>
+            {images[(currentImageIndex + 1) % images.length] && (
+              <link rel="preload" href={images[(currentImageIndex + 1) % images.length]} as="image" />
+            )}
             <PrevButton
               onClick={handlePrev}
               className="absolute left-8 lg:left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/20 backdrop-blur-sm text-white p-2.5 rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-white/30 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-white/20"
