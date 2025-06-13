@@ -1,9 +1,7 @@
 "use client";
 
-import {
-  ProjectCard,
-  Link as L,
-} from "@/features/Project/components/projectCard";
+import { ProjectCard } from "@/features/Project/components/projectCard";
+import { ProjectLink } from "@/types/projectLink";
 import { PROJECT_LIST } from "@/constants/project";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
@@ -83,7 +81,7 @@ export default function ProjectSection() {
                   }`}
                   title={project.title}
                   subTitle={project.subTitle}
-                  links={project.links as L[]}
+                  links={project.links as ProjectLink[]}
                 />
               </motion.div>
             ))}
