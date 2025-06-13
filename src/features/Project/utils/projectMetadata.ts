@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { PROJECT_LIST } from "@/constants/project";
+import { getProjectContent } from "@/utils/mdx";
 
 type tParams = Promise<{ id: string }>;
 
@@ -17,26 +17,28 @@ export async function generateMetadata({
     };
   }
 
-  const project = PROJECT_LIST.find((p) => p.id === id);
+  const mdxContent = await getProjectContent(id);
 
-  if (!project) {
+  if (!mdxContent) {
     return {
       title: "프로젝트를 찾을 수 없습니다.",
       description: "존재하지 않는 프로젝트입니다.",
     };
   }
 
+  const { frontmatter } = mdxContent;
+
   return {
-    title: project.title,
-    description: project.subTitle,
+    title: frontmatter.title,
+    description: frontmatter.subTitle,
     openGraph: {
-      title: project.title,
-      description: project.subTitle,
-      url: `/project/${project.id}`,
+      title: frontmatter.title,
+      description: frontmatter.subTitle,
+      url: `/project/${id}`,
       type: "website",
       images: [
         {
-          url: `/images/project/${project.id}/thumbnail.webp`,
+          url: `/images/project/${id}/thumbnail.${frontmatter.thumbnailFormat || "webp"}`,
           width: 1200,
           height: 630,
         },
@@ -44,9 +46,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: project.title,
-      description: project.subTitle,
-      images: [`/images/project/${project.id}/thumbnail.webp`],
+      title: frontmatter.title,
+      description: frontmatter.subTitle,
+      images: [`/images/project/${id}/thumbnail.${frontmatter.thumbnailFormat || "webp"}`],
     },
   };
 }
