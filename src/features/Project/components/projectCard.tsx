@@ -8,18 +8,14 @@ import githubLogo from "@/assets/icons/github.svg";
 import steamLogo from "@/assets/icons/steam.svg";
 import { defaultFadeIn } from "@/constants/motion";
 import Link from "next/link";
-
-export type Link = {
-  type: "youtube" | "github" | "steam";
-  href: string;
-};
+import { ProjectLink } from "@/types/projectLink";
 
 type ProjectCardProps = {
   id?: string;
   title: string;
   subTitle?: string;
   img: string;
-  links?: Link[];
+  links?: ProjectLink[];
   // onClick prop 추가
   onClick?: () => void;
 };

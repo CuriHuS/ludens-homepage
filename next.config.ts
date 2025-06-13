@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
+import nextMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   /* config options here */
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -34,4 +36,12 @@ module.exports = {
   },
 };
 
-export default nextConfig;
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  }
+})
+
+export default withMDX(nextConfig);

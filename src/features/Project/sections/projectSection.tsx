@@ -4,7 +4,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ProjectCard, Link } from "@/features/Project/components/projectCard";
+import { ProjectCard } from "@/features/Project/components/projectCard";
+import { ProjectLink } from "@/types/projectLink";
 import { staggerHalf } from "@/constants/motion";
 import { PROJECT_LIST } from "@/constants/project";
 
@@ -42,7 +43,7 @@ export default function ProjectSection() {
               }`}
               title={project.title}
               subTitle={project.subTitle}
-              links={project.links as Link[]}
+              links={project.links as ProjectLink[]}
               onClick={() => router.push(`/project/${project.id}`)}
             />
           ))}
