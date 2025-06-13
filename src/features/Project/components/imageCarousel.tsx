@@ -4,15 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import { NextButton, PrevButton } from "@/components/common/CarouselArrowButton";
 
-type ImageSliderProps = {
+type ImageCarouselProps = {
   images: string[];
   projectTitle: string;
 };
 
-export default function ImageSlider({
+export default function ImageCarousel({
   images,
   projectTitle,
-}: ImageSliderProps) {
+}: ImageCarouselProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (images.length === 0) {
@@ -36,6 +36,7 @@ export default function ImageSlider({
           width={600}
           height={337}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+          priority={true}
         />
         {images.length > 1 && (
           <>

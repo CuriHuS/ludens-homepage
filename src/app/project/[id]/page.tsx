@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getProjectContent } from "@/utils/mdx";
 import { generateMetadata } from "@/features/Project/utils/projectMetadata";
-import ImageSlider from "@/features/Project/components/imageSlider";
+import ImageCarousel from "@/features/Project/components/imageCarousel";
 
 import { SummaryCard } from "@/features/Project/components/summaryCard";
 import ProjectContent from "@/features/Project/components/projectContent";
@@ -33,7 +33,7 @@ export default async function ProjectDetailPage({
         <SummaryCard teamMembers={frontmatter.teamMembers} period={frontmatter.period} techStack={frontmatter.techStack} />
 
         <section className="mb-16 flex justify-center items-center">
-          <ImageSlider images={images} projectTitle={frontmatter.title} />
+          <ImageCarousel images={images} projectTitle={frontmatter.title} />
         </section>
 
         <ProjectContent content={content} />
