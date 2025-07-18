@@ -73,7 +73,6 @@ export default function Header() {
                                 </Link>
                             ))}
                             <ApplyButton />
-
                         </div>
                     </div>
                 </div>
