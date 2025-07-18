@@ -76,9 +76,9 @@ export default function ProjectSection() {
                 onClick={() => router.push(`/project/${project.id}`)}
               >
                 <ProjectCard
-                  img={`/images/project/${project.id}/thumbnail.${
-                    project.thumbnailFormat || "webp"
-                  }`}
+                  id={project.id}
+                  img={`/images/project/${project.id}/thumbnail.${project.thumbnailFormat || "webp"
+                    }`}
                   title={project.title}
                   subTitle={project.subTitle}
                   links={project.links as ProjectLink[]}
