@@ -1,7 +1,6 @@
 // src/features/Project/sections/projectSection.tsx
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ProjectCard } from "@/features/Project/components/projectCard";
@@ -15,7 +14,6 @@ export default function ProjectSection() {
   const [visibleProjects, setVisibleProjects] = useState(
     INITIAL_VISIBLE_PROJECTS
   );
-  const router = useRouter();
 
   const onClickShowMore = () => {
     setVisibleProjects((prev) => prev + INITIAL_VISIBLE_PROJECTS);
@@ -44,7 +42,6 @@ export default function ProjectSection() {
               title={project.title}
               subTitle={project.subTitle}
               links={project.links as ProjectLink[]}
-              onClick={() => router.push(`/project/${project.id}`)}
             />
           ))}
         </motion.div>

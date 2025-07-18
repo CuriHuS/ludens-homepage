@@ -9,15 +9,14 @@ import steamLogo from "@/assets/icons/steam.svg";
 import { defaultFadeIn } from "@/constants/motion";
 import Link from "next/link";
 import { ProjectLink } from "@/types/projectLink";
+import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {
-  id?: string;
+  id: string;
   title: string;
   subTitle?: string;
   img: string;
   links?: ProjectLink[];
-  // onClick prop 추가
-  onClick?: () => void;
 };
 
 const logoMap = {
@@ -32,21 +31,16 @@ export function ProjectCard({
   subTitle,
   img,
   links,
-  onClick, // onClick prop 추가
 }: ProjectCardProps) {
+  const router = useRouter();
+
   return (
     <motion.article
       className="relative h-[220px] w-full overflow-hidden rounded-xl hover:cursor-pointer group"
       initial="initial"
       animate="animate"
       variants={defaultFadeIn}
-      onClick={() => {
-        if (onClick) {
-          onClick();
-        } else if (id) {
-          window.location.href = `/project/${id}`;
-        }
-      }}
+      onClick={() => router.push(`/project/${id}`)}
     >
       <Image
         className="object-cover object-center rounded-xl transition-all duration-300 group-hover:brightness-[0.3]"
@@ -68,7 +62,7 @@ export function ProjectCard({
           <div className="mt-auto flex items-center gap-1">
             {links.map((link) => (
               <span key={link.type} className="flex items-center">
-                <Link href={link.href} target="_blank" rel="noreferrer">
+                <Link href={link.href} target="_blank" rel="noreferrer" prefetch>
                   <Image
                     className="cursor-pointer hover:scale-110 transition-all duration-300"
                     src={logoMap[link.type]}
