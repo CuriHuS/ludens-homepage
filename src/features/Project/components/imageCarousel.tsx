@@ -28,14 +28,14 @@ export default function ImageCarousel({
   };
 
   return (
-    <div className="w-full md:w-[1000px]">
+    <div className="w-full mx-auto">
       <div className="relative aspect-[16/9]">
         <Image
           src={images[currentImageIndex]}
           alt={`${projectTitle} image ${currentImageIndex + 1}`}
           width={600}
           height={337}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 rounded-2xl"
           sizes="(max-width: 768px) 100vw, 1000px"
           priority={currentImageIndex === 0}
           quality={85}

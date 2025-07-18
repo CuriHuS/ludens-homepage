@@ -11,7 +11,7 @@ export default function CountupCard({ title, number, unit }: CountupCardProps) {
     <CountUp
       start={0}
       end={number}
-      duration={3}
+      duration={4}
       enableScrollSpy={true}
       scrollSpyOnce={true}
       separator=""
