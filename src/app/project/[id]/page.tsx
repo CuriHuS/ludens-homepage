@@ -6,9 +6,15 @@ import ImageCarousel from "@/features/Project/components/imageCarousel";
 import { SummaryCard } from "@/features/Project/components/summaryCard";
 import ProjectContent from "@/features/Project/components/projectContent";
 import ProjectInfo from "@/features/Project/components/projectInfo";
+import { PROJECT_LIST } from "@/constants/project";
+
+export async function generateStaticParams() {
+  return PROJECT_LIST.map((project) => ({
+    id: project.id,
+  }));
+}
 
 export { generateMetadata };
-
 
 export default async function ProjectDetailPage({
   params,
