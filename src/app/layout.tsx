@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { domMax, LazyMotion } from 'framer-motion';
+import { domAnimation, LazyMotion } from 'framer-motion';
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from "@/components/ga/googleAnalytics";
@@ -52,7 +52,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <LazyMotion features={domMax}>
+        <LazyMotion features={domAnimation}>
           <Header />
           <main className="flex-1 w-full max-w-7xl px-8 pb-48 mx-auto">
             {children}
