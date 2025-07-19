@@ -5,46 +5,39 @@ import { motion } from "framer-motion";
 
 import { ActivityType } from "@/constants/activity";
 import { defaultFadeIn } from "@/constants/motion";
+// import router from "next/router";
 
 type ActivityCardProps = {
-  id?: string;
+  // id?: string;
   title: string;
   type: ActivityType;
   // year가 string | string[] 모두 가능
   year: string | string[]; // <-- changed
   date: string;
   img: string;
-  onClick?: () => void;
 };
 
 export function ActivityCard({
-  id,
+  // id,
   title,
   type,
   year,
   date,
   img,
-  onClick,
 }: ActivityCardProps) {
   // UI 표시용으로 처리
   const yearText = Array.isArray(year) ? year.join("·") : year; // <-- changed
 
   return (
     <motion.article
-      className="relative h-[220px] w-full overflow-hidden rounded-xl hover:cursor-pointer group"
+      className="relative h-[220px] w-full overflow-hidden rounded-xl group"
       initial="initial"
       animate="animate"
       variants={defaultFadeIn}
-      onClick={() => {
-        if (onClick) {
-          onClick();
-        } else if (id) {
-          window.location.href = `/activity/${id}`;
-        }
-      }}
+      // onClick={() => router.push(`/activity/${id}`)}
     >
       <Image
-        className="object-cover object-center rounded-xl group-hover:brightness-[0.3] transition-all duration-200"
+        className="object-cover object-center rounded-xl group-hover:brightness-[0.6] transition-all duration-200"
         src={img}
         alt={title}
         fill
