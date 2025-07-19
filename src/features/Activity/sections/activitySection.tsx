@@ -10,7 +10,6 @@ import { ActivityCard } from "@/features/Activity/components/activityCard";
 import { staggerHalf } from "@/constants/motion";
 import { ACTIVITY_LIST, YEAR_LIST } from "@/constants/activity";
 import { getCurrentActivities } from "@/features/Activity/utils/pagination";
-import { useRouter } from "next/navigation";
 
 const FIRST_PAGE = 1;
 const ALL_TAB = "전체";
@@ -21,7 +20,6 @@ export default function ActivitySection() {
   const [selectedActivityList, setSelectedActivityList] =
     useState(ACTIVITY_LIST);
   const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE);
-  const router = useRouter();
   useEffect(() => {
     setCurrentPage(1);
     if (currentTab === ALL_TAB) {
@@ -78,7 +76,6 @@ export default function ActivitySection() {
                   type={activity.type}
                   year={activity.year}
                   date={activity.date}
-                  onClick={() => router.push(`/activity/${activity.id}`)}
                 />
               );
             })}
